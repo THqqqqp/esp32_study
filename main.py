@@ -1,9 +1,11 @@
 import demos.MH as MH
+import demos.DHT as DHT
 
 
 def main():
     print("system start...")
-    MH.main()
+    # MH.main()
+    DHT.main()
     print("system over...")
 
 
