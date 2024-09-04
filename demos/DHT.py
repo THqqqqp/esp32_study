@@ -4,7 +4,7 @@ import dht
 from machine import Pin
 
 
-def dht():
+def dhtFun():
     dht11 = dht.DHT11(Pin(4))
     while True:
         dht11.measure()
@@ -14,4 +14,4 @@ def dht():
 
 def main():
     print("DHT starting...")
-    dht()
+    dhtFun()
