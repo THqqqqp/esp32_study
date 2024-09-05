@@ -15,8 +15,6 @@ def on_connect(client, userdata, flags, reason_code, properties):
 
 # 当接收到MQTT消息时调用的回调函数
 def on_message(client, userdata, msg):
-    temp, hum = msg.payload.decode('utf-8').split(",")
-    print(temp, hum)
     print(f"接收到消息： '{msg.payload.decode('utf-8')}',主题： '{msg.topic}'")
 
 
