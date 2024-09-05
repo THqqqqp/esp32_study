@@ -42,15 +42,18 @@ def connect_wifi(ssid, password):
 
 
 # 配置MQTT
-def config_mqtt(mqtt_server='192.168.1.102'):
+def config_mqtt(mqtt_server='localhost'):
     client_id = 'esp32-client'
     topic_pub = 'test/myTestTopic'
 
     client = MQTTClient(client_id, mqtt_server)
     client.connect()
 
+    num = 0
+
     while True:
-        msg = b'Hello from ESP32'
+        num += 1
+        msg = f'num:{num}'
         client.publish(topic_pub, msg)
         print("Sent:", msg)
         time.sleep(5)
